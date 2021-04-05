@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.22.0 (955b78124)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: brain-rpa03
+  name: brain-rpa03
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: brain-rpa03
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert
+        kompose.version: 1.22.0 (955b78124)
+      creationTimestamp: null
+      labels:
+        io.kompose.service: brain-rpa03
+    spec:
+      containers:
+        - image: '.dkr.ecr..amazonaws.com/:'
+          name: --active1
+          ports:
+            - containerPort: 8081
+          resources: {}
+      restartPolicy: Always
+status: {}
